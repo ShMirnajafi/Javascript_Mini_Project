@@ -17,11 +17,19 @@ const controlSetItem = function (item) {
   itemsView.update(model.state.items);
 };
 
+const controlDeletItem = function (item) {
+  model.deletItem(item);
+
+  summaryView.update(model.state.summary);
+  itemsView.update(model.state.items);
+};
+
 const init = function () {
   summaryView.update(model.state.summary);
   itemsView.update(model.state.items);
   budgetView.addHandlerSubmitBudget(controlSetBudjet);
   costView.addHandlerSubmitCost(controlSetItem);
+  itemsView.addHandlerDeletItem(controlDeletItem);
 };
 
 init();

@@ -26,3 +26,9 @@ export const addItem = function (item) {
   state.items.push(item);
   calculateNewCostAndBalance(+item.cost);
 };
+
+export const deletItem = function (item) {
+  state.items = state.items.filter((i) => i.id !== item.id);
+
+  calculateNewCostAndBalance(-1 * +item.cost);
+};

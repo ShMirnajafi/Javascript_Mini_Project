@@ -22,7 +22,9 @@ class CostView {
         return;
       }
 
-      handler({ type, cost });
+      const id = (Date.now() + "").slice(-10);
+
+      handler({ type, cost, id });
 
       typeEl.value = costEl.value = "";
       return;
