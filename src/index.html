@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="http://awebfont.ir/css?id=1116"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <script defer type="module" src="./controller.js"></script>
+    <title>Cost Management</title>
+  </head>
+  <body>
+    <main class="app">
+      <h1 class="topic">مدیریت هزینه ها</h1>
+
+      <!-- Primitive Budget Form -->
+      <div class="primitive_budget">
+        <form class="primitive_budget--form">
+          <label class="primitive_budget--lable">
+            لطفا بودجه اولیه خود را وارد کنید
+          </label>
+          <input type="number" class="primitive_budget--input" />
+          <button class="primitive_budget--btn">محاسبه</button>
+        </form>
+      </div>
+
+      <!-- Cost Form -->
+      <div class="cost">
+        <form class="cost--form">
+          <label class="cost--lable">لطفا عنوان هزینه را وارد کنید</label>
+          <input type="text" class="cost_title--input" />
+          <label class="cost--lable">لطفا مقدار عنوان هزینه را وارد کنید</label>
+          <input type="number" class="cost_quantity--input" />
+          <button class="cost--btn">اضافه کردن هزینه</button>
+        </form>
+      </div>
+
+      <!-- Summary Info (Balance, Costs, Budget) -->
+      <div class="summary">
+        <div class="summary_balance">
+          <h3>موجودی</h3>
+          <img class="image" src="../icons/balance.png" alt="balance" />
+          <label class="summary_balance--lable">$6000</label>
+        </div>
+        <div class="summary_costs">
+          <h3>هزینه ها</h3>
+          <img class="image" src="../icons/costs.png" alt="costs" />
+          <label class="summary_costs--lable">$4000</label>
+        </div>
+        <div class="summary_budget">
+          <h3>بودجه</h3>
+          <img class="image" src="../icons/budget.png" alt="budget" />
+          <label class="summary_budget--lable">$10000</label>
+        </div>
+      </div>
+
+      <!-- Items -->
+      <div class="items">
+        <div class="items_headers">
+          <h3 class="items_headers--1">نوع هزینه</h3>
+          <h3 class="items_headers--2">مقدار هزینه</h3>
+        </div>
+        <div class="items_container">
+          <button class="items_container--btn" data-="0001">
+            <img
+              class="items_container--btn_img"
+              src="../icons/Trash.png"
+              alt="trash"
+            />
+          </button>
+          <label class="items_container--cost">1000</label>
+          <label class="items_container--type">خرید لپ تاپ</label>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

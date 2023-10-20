@@ -1,0 +1,19 @@
+{
+  "name": "javascript-mini-project",
+  "version": "1.0.0",
+  "description": "A Budget management application",
+  "main": "inded.html",
+  "scripts": {
+    "start": "parcel index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShMirnajafi/Javascript_Mini_Project.git"
+  },
+  "author": "Shahriar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShMirnajafi/Javascript_Mini_Project/issues"
+  },
+  "homepage": "https://github.com/ShMirnajafi/Javascript_Mini_Project#readme"
+}
