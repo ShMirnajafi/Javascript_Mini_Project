@@ -1,3 +1,4 @@
+// In this object, we store all data that we need during running our program
 export const state = {
   summary: {
     budget: 0,
@@ -9,6 +10,7 @@ export const state = {
 };
 
 export const calculateNewBudget = function (amount) {
+  // check if it's first time adding a budget
   if (state.firstTime) {
     state.summary.budget = state.summary.balance = amount;
     state.firstTime = false;
@@ -23,12 +25,33 @@ const calculateNewCostAndBalance = function (newCost) {
 };
 
 export const addItem = function (item) {
+  // add new item to items array
   state.items.push(item);
+  // update summary info
   calculateNewCostAndBalance(+item.cost);
 };
 
 export const deletItem = function (item) {
+  // recreate our items array, whithout deleted item
   state.items = state.items.filter((i) => i.id !== item.id);
-
+  // update summary info
   calculateNewCostAndBalance(-1 * +item.cost);
+};
+
+export const saveData = function () {
+  localStorage.setItem("data", JSON.stringify(state));
+};
+
+export const loadData = function () {
+  // read data
+  const data = JSON.parse(localStorage.getItem("data"));
+  console.log(data);
+
+  if (!data) {
+    return;
+  }
+  // add readed data to our state
+  state.firstTime = data.firstTime;
+  state.items = data.items;
+  state.summary = data.summary;
 };

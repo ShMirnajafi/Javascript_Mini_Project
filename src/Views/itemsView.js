@@ -2,6 +2,7 @@ class ItemsView {
   _itemsContainer = document.querySelector(".items_container");
 
   addHandlerDeletItem(handler) {
+    // in this case we use enet delegation, because our elements are not exsist at start point
     this._itemsContainer.addEventListener("click", function (e) {
       e.preventDefault();
 
@@ -22,10 +23,8 @@ class ItemsView {
 
   update(items) {
     this._itemsContainer.innerHTML = "";
-    console.log(items);
 
     const html = items.reduce((html, i) => {
-      console.log(i);
       return html.concat(
         `
         <button class="items_container--btn" data-id=${i.id}>

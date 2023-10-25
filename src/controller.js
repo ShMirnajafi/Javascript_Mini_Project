@@ -8,6 +8,7 @@ const controlSetBudjet = function (newAmount) {
   model.calculateNewBudget(+newAmount);
 
   summaryView.update(model.state.summary);
+  model.saveData();
 };
 
 const controlSetItem = function (item) {
@@ -15,6 +16,7 @@ const controlSetItem = function (item) {
 
   summaryView.update(model.state.summary);
   itemsView.update(model.state.items);
+  model.saveData();
 };
 
 const controlDeletItem = function (item) {
@@ -22,9 +24,11 @@ const controlDeletItem = function (item) {
 
   summaryView.update(model.state.summary);
   itemsView.update(model.state.items);
+  model.saveData();
 };
-
+// by calling this function, we add our event listeners to DOM objects
 const init = function () {
+  model.loadData();
   summaryView.update(model.state.summary);
   itemsView.update(model.state.items);
   budgetView.addHandlerSubmitBudget(controlSetBudjet);
