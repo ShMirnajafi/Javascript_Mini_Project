@@ -116,6 +116,7 @@ body {
 }
 
 .primitive_budget--btn {
+  font-family: "B yekan";
   color: green;
   background-color: #ffffff;
   margin: 0.4rem 1rem 1rem;
@@ -221,6 +222,7 @@ body {
 }
 
 .cost--btn {
+  font-family: "B yekan";
   margin: 0.4rem 1rem 1rem;
   display: block;
   color: #ffffff;

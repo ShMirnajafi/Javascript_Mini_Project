@@ -8,8 +8,8 @@
       rel="stylesheet"
       type="text/css"
     />
-    <link rel="stylesheet" href="style.css" />
-    <script defer src="controller.js"></script>
+    <link rel="stylesheet" href="./src/style.css" />
+    <script defer type="module" src="./src/controller.js"></script>
     <title>Cost Management</title>
   </head>
   <body>
@@ -42,17 +42,17 @@
       <div class="summary">
         <div class="summary_balance">
           <h3>موجودی</h3>
-          <img class="image" src="icons/balance.png" alt="balance" />
+          <img class="image" src="./icons/balance.png" alt="balance" />
           <label class="summary_balance--lable">$6000</label>
         </div>
         <div class="summary_costs">
           <h3>هزینه ها</h3>
-          <img class="image" src="icons/costs.png" alt="costs" />
+          <img class="image" src="./icons/costs.png" alt="costs" />
           <label class="summary_costs--lable">$4000</label>
         </div>
         <div class="summary_budget">
           <h3>بودجه</h3>
-          <img class="image" src="icons/budget.png" alt="budget" />
+          <img class="image" src="./icons/budget.png" alt="budget" />
           <label class="summary_budget--lable">$10000</label>
         </div>
       </div>
@@ -63,16 +63,16 @@
           <h3 class="items_headers--1">نوع هزینه</h3>
           <h3 class="items_headers--2">مقدار هزینه</h3>
         </div>
-        <div class="items_item" data-="0001">
-          <button class="items_item--btn">
+        <div class="items_container">
+          <button class="items_container--btn" data-id="0001">
             <img
-              class="items_item--btn_img"
-              src="icons/Trash.png"
+              class="items_container--btn_img"
+              src="./icons/Trash.png"
               alt="trash"
             />
           </button>
-          <label class="items_item--cost">1000</label>
-          <label class="items_item--type">خرید لپ تاپ</label>
+          <label class="items_container--cost">1000</label>
+          <label class="items_container--type">خرید لپ تاپ</label>
         </div>
       </div>
     </main>

@@ -1,3 +1,7 @@
+// const Redis = require("ioredis");
+
+// const redis = new Redis();
+
 // In this object, we store all data that we need during running our program
 export const state = {
   summary: {
@@ -38,18 +42,29 @@ export const deletItem = function (item) {
   calculateNewCostAndBalance(-1 * +item.cost);
 };
 
-export const saveData = function () {
+export const saveData = async function () {
   localStorage.setItem("data", JSON.stringify(state));
+  // await redis.set("data", JSON.stringify(state));
 };
 
 export const loadData = function () {
   // read data
   const data = JSON.parse(localStorage.getItem("data"));
-  console.log(data);
 
   if (!data) {
     return;
   }
+
+  // const data = redis.get("data", (err, result) => {
+  //   if (err) {
+  //     console.error(err);
+  //     return null;
+  //   } else {
+  //     console.log(result);
+  //     return JSON.parse(result);
+  //   }
+  // });
+
   // add readed data to our state
   state.firstTime = data.firstTime;
   state.items = data.items;
