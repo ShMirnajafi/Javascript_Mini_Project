@@ -27,13 +27,17 @@ const controlDeletItem = function (item) {
   model.saveData();
 };
 // by calling this function, we add our event listeners to DOM objects
-const init = function () {
-  model.loadData();
-  summaryView.update(model.state.summary);
-  itemsView.update(model.state.items);
-  budgetView.addHandlerSubmitBudget(controlSetBudjet);
-  costView.addHandlerSubmitCost(controlSetItem);
-  itemsView.addHandlerDeletItem(controlDeletItem);
+const init = async function () {
+  try {
+    await model.loadData();
+    summaryView.update(model.state.summary);
+    itemsView.update(model.state.items);
+    budgetView.addHandlerSubmitBudget(controlSetBudjet);
+    costView.addHandlerSubmitCost(controlSetItem);
+    itemsView.addHandlerDeletItem(controlDeletItem);
+  } catch (error) {
+    console.error("error in initialization " + error.message);
+  }
 };
 
 init();
